@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Productivity Dashboard</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 18px; max-width: 900px; }
+      h1 { margin-top: 0; }
+      .row { display:flex; gap:20px; align-items:flex-start; }
+      canvas { background: #fff; border: 1px solid #ddd; }
+      table { border-collapse: collapse; margin-top: 12px; width: 100%; }
+      table th, table td { text-align:left; padding:8px; border-bottom: 1px solid #eee; }
+      .legend { margin-top: 8px; font-size: 14px; }
+      .btn { padding:8px 10px; cursor:pointer; }
+    </style>
+  </head>
+  <body>
+    <h1>Productivity Dashboard</h1>
+    <div>
+      <button id="refreshBtn" class="btn">Refresh</button>
+      <button id="exportBtn" class="btn">Export CSV</button>
+      <button id="printBtn" class="btn">Print</button>
+    </div>
+
+    <div class="row" style="margin-top:12px;">
+      <div>
+        <canvas id="barChart" width="500" height="300"></canvas>
+        <div style="text-align:center; font-size:13px; margin-top:6px;">Minutes per domain (bar)</div>
+      </div>
+      <div>
+        <canvas id="pieChart" width="300" height="300"></canvas>
+        <div style="text-align:center; font-size:13px; margin-top:6px;">Productive vs Unproductive (pie)</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:18px;">Detailed table</h3>
+    <div id="tableWrap"></div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
